@@ -1,0 +1,47 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="jumbotron" id="head-doc">
+         <header>
+            <h1>New Notice</h1>
+         </header>
+         <form id="createNotice-form" action="/notice/add" method="POST">
+            {{#if alertMsg}}
+            <p class="alertMsg">{{alertMsg}}</p>
+            {{/if }}
+            <div id="inputDiv">
+               <label for="title"> Notice Title</label><br>
+               <input class="major" type="text" name="title" />
+            </div>
+            <div id="inputDiv">
+               <label for="content">Notice Content</label><br>
+               <input class="major" type="text" name="content" />
+            </div>
+            <div id="inputDiv">
+               <label for="startdate">Notice Startdate</label><br>
+               <input class="major" type="text" name="startdate" />
+            </div>
+            <div id="inputDiv">
+               <label for="enddate">Notice Enddate</label><br>
+               <input class="major" type="text" name="enddate" />
+            </div>
+             <div id="inputDiv">
+               <label for="noticeFor">Notice For</label><br>
+                <select id="noticeFor" name="noticeFor">
+                      <option value="" <option value="" selected disabled hidden></option>></option>
+                    <option name="noticeFor" value="Admin">Admin</option>
+                    <option name="noticeFor" value="Trainer">Trainer</option>
+                    <option name="noticeFor" value="Member">Member</option>
+                </select>
+               
+            </div>
+
+            <div class="centered">
+               <div class="row">
+                  <div class="col-sm-6"><input type="submit" value="Create Notice"></div>
+                  <div class="col-sm-6"> <input type="button" onclick="window.location.href='/notice'" value="Cancel"></div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

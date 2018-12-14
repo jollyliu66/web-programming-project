@@ -1,0 +1,51 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="jumbotron" id="head-doc">
+         <header>
+            <h1>Edit Activity</h1>
+         </header>
+         {{#if error}}
+         <p class = "alertMsg">*{{error}}</p>
+         {{/if}}
+         {{#if alertMsg}}
+         <p class = "alertMsg">*{{alertMsg}}</p>
+         {{/if}}
+         <form id="createActivity-form" action="/activity/update" method="POST">
+            <div id="inputDiv">
+               <label for="activity"> Activity Name</label><br>
+               <input class="major" type="text" value="{{activity.activityname}}"  name="activityname">
+            </div>
+            <div id="inputDiv">
+               <label for="activitytrainer">Activity Trainer</label><br>
+               <select id="activitytrainer"  name="activitytrainer">
+                   <option value="" <option value="" selected disabled hidden></option>></option>
+                  {{#each trainerList}}
+                     <option value={{this.trainername}}>{{this.trainername}}</option>
+                  {{/each}}
+                </select>
+            </div>
+            <div id="inputDiv">
+               <label for="membershipplan">Membership Plan</label><br>
+               <select id="membershipplan" value="{{activity.membershipplan}}" name="membershipplan">
+                   <option value="" <option value="" selected disabled hidden></option>></option>
+                  <option name="membershipplan" value="Gold">Gold</option>
+                  <option name="membershipplan" value="Platinum">Platinum</option>
+                  <option name="membershipplan" value="Diamond">Diamond</option>
+                  <option name="membershipplan" value="Silver">Silver</option>
+               </select>
+            </div>
+            <div id="inputDiv">
+               <label for="description">Description</label><br>
+               <textarea name="description" >{{activity.activityDescription}}</textarea>
+            </div>
+            <input type="hidden" name="activityId" value={{activity._id}}>
+            <div  class="centered">
+               <div class="row">
+                  <div class="col-sm-6"><input type="submit"  value="Update"></div>
+                  <div class="col-sm-6"> <input type="button" onclick="window.location.href='activity/view/{{activity._id}}'"  id="cancel" value="Cancel"></div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="jumbotron" id="head-doc">
+         <header>
+            <h1>New Membership</h1>
+         </header>
+         <form id="createMembership-form" action="/membership/add" method="POST">
+          {{#if alertMsg}}
+            <p class="alertMsg">{{alertMsg}}</p>
+            {{/if }}
+            <div id="inputDiv">
+               <label for="membershipname"> Membership Name</label><br>
+               <input class="major" type="text" name="membershipname" />
+            </div>
+            <div id="inputDiv">
+               <label for="membershipperiod">Membership Period(days)</label><br>
+               <input class="major" type="text" name="membershipperiod" />
+            </div>
+            <div id="inputDiv">
+               <label for="signupfees">Signup Fees($)</label><br>
+               <input class="major" type="text" name="signupfees" />
+            </div>
+            <div id="inputDiv">
+               <label for="services">Services</label><br>
+                  <input class="major" type="text" name="services" />
+               </select>
+            </div>
+            <div class="centered">
+               <div class="row">
+                  <div class="col-sm-6"><input type="submit" value="Create Membership"></div>
+                  <div class="col-sm-6"> <input type="button" onclick="window.location.href='/membership'" id="cancel" value="Cancel"></div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

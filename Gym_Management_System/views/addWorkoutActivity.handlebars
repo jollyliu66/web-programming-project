@@ -1,0 +1,68 @@
+<div class="content">
+    <div class="container-fluid">
+
+        <header>
+            <h1>Add Activity</h1>
+
+        </header>
+
+        <body>
+            <form id="add-activity" action="/workoutActivity/add/" method="POST">
+            <p>{{message}}</p>
+                <input type="hidden" value={{userId}} name="userId">
+                <label for="level">Level</label><br>
+                <select id="level" name="level">
+                    <option value="" <option value="" selected disabled hidden></option>
+                    </option>
+                    <option name="level" value=low>Low</option>
+                    <option name="level" value=Medium>Medium</option>
+                    <option name="level" value=High>High</option>
+                </select>
+                <label for="description">Description
+                    <textarea rows="2" id="description" name="description"></textarea>
+                </label>
+                <br />
+                <label for="startdate">Start Date
+                    <input type="text" id="startdate" name="startdate" />
+                </label>
+                <br />
+                </label>
+                <label for="enddate">End Date
+                    <input type="text" id="enddate" name="enddate" />
+                </label>
+                <br />
+                <label for="days">Select Days</label>
+                <input type="checkbox" name="days" value="Monday">Monday
+                <input type="checkbox" name="days" value="Tuesday">Tuesday
+                <input type="checkbox" name="days" value="Wednesday">Wednesday
+                <input type="checkbox" name="days" value="Thursday">Thursday
+                <input type="checkbox" name="days" value="Friday">Friday
+                <input type="checkbox" name="days" value="Saturday">Saturday
+                <input type="checkbox" name="days" value="Sunday">Sunday
+                <br />
+                 <label for="activityname">Activities</label><br>
+                <select id="activityname" name="activityname">
+                    <option value="" <option value="" selected disabled hidden></option>></option>
+                    {{#each activity}}
+                    
+                    <option name="activityname" value={{this.activityname}}>{{{this.activityname}}}</option>
+                    {{/each}}
+                </select> <br> 
+                <label for="sets"> Sets
+                    <input type="text" id="sets" name="sets" />
+                </label>
+                <br />
+                <label for="weight"> Weight(kg)
+                    <input type="text" id="weight" name="weight" />
+                </label>
+                <br />
+                <label for="repetitions"> Repetitions
+                    <input type="text" id="repetitions" name="repetitions" />
+                </label>
+                <br />
+                <button type="submit">addWorkout</button>
+                <a href="/workoutActivity">Go back</a>
+            </form>
+        </body>
+    </div>
+</div>

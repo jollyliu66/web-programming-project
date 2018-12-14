@@ -1,0 +1,61 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="jumbotron" id="head-doc">
+         <header>
+            <h1>New Members</h1>
+         </header>
+         <form id="createMember-form" action="/gymMember/add" method="POST">
+          {{#if alertMsg}}
+            <p class="alertMsg">{{alertMsg}}</p>
+            {{/if }}
+            <div id="inputDiv">
+               <label for="membername"> Member Name</label><br>
+               <input class="major" type="text" name="membername" />
+            </div>
+              <div id="inputDiv">
+               <label for="memberaddress"> Address</label><br>
+               <input class="major" type="text" name="memberaddress" />
+            </div>
+           <div id="inputDiv">
+               <label for="memberemail"> Email</label><br>
+               <input class="major" type="text" name="memberemail" />
+            </div>
+             <div id="inputDiv">
+               <label for="membermobileno"> Mobile No</label><br>
+               <input class="major" type="text" name="membermobileno" />
+            </div>
+             <div id="inputDiv">
+               <label for="memberdob"> Date Of Birth</label><br>
+               <input class="major" type="text" name="memberdob" />
+            </div>
+             <div id="inputDiv">
+               <label for="membergender"> Gender</label><br>
+                <select id="membergender" name="membergender">
+                    <option value="" <option value="" selected disabled hidden></option>></option>
+                   <option name="membergender" value=Male>Male</option>
+                   <option name="membergender" value=Female>Female</option>
+                   <option name="membergender" value=NA>NA</option>
+                </select>
+            </div>
+             <div id="inputDiv">
+               <label for="memberusername"> Username</label><br>
+               <input class="major" type="text" name="memberusername" />
+            </div>
+            <div id="inputDiv">
+               <label for="memberheight"> Height(metres)</label><br>
+               <input class="major" type="text" name="memberheight" />
+            </div>
+            <div id="inputDiv">
+               <label for="memberweight"> Weight(kg)</label><br>
+               <input class="major" type="text" name="memberweight" />
+            </div>
+            <div class="centered">
+               <div class="row">
+                  <div class="col-sm-6"><input type="submit" value="Create Member"></div>
+                  <div class="col-sm-6"> <input type="button" onclick="window.location.href='/gymMember'" id="cancel" value="Cancel"></div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

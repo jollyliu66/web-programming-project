@@ -1,0 +1,42 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="jumbotron" id="head-doc">
+         <header>
+            <h1>Edit Membership</h1>
+         </header>
+         {{#if error}}
+         <p class = "alertMsg">*{{error}}</p>
+         {{/if}}
+          {{#if alertMsg}}
+         <p class = "alertMsg">*{{alertMsg}}</p>
+         {{/if}}
+         <form id="updateMembership-form" action="/membership/update" method="POST">
+            <div id="inputDiv">
+               <label for="membershipname"> Membership Name</label><br>
+               <input class="major" type="text" name="membershipname" value ={{membership.membershipname}}>
+            </div>
+            <div id="inputDiv">
+               <label for="membershipperiod">Membership Period(days)</label><br>
+               <input class="major" type="text" name="membershipperiod" value ={{membership.membershipperiod}}>
+            </div>
+            <div id="inputDiv">
+               <label for="signupfees">Signup Fees($)</label><br>
+               <input class="major" type="text" name="signupfees" value ={{membership.signupfees}}>
+            </div>
+            <div id="inputDiv">
+               <label for="services">Services</label><br>
+                  <input class="major" type="text" name="services" value ={{membership.services}}>
+               </select>
+            </div>
+            <input type="hidden" name="membershipId" value={{membership._id}}>
+            <div class="centered">
+               <div class="row">
+                  <div class="col-sm-6"><input type="submit"  value="Update"></div>
+                   <div class="col-sm-6"> <input type="button" onclick="window.location.href='/membership/view/{{membership._id}}'"
+                                id="cancel" value="Cancel"></div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

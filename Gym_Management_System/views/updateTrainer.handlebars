@@ -1,0 +1,39 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="jumbotron" id="head-doc">
+            <header>
+                <h1>Edit Trainer</h1>
+            </header>
+            
+            {{#if error}}
+            <p class="alertMsg">*{{error}}</p>
+            {{/if}}
+            <p>{{alertMsg}}</p>
+            <form id="createTrainer-form" action="/trainer/update" method="POST">
+             
+                <div id="inputDiv">
+                    <label for="trainer"> Trainer Name</label><br>
+                    <input class="major" type="text" value="{{trainer.trainername}}" name="trainername">
+                </div>
+
+                <div id="inputDiv">
+                    <label for="certifications"> Certifications</label><br>
+                    <input class="major" type="text" value="{{trainer.certifications}}" name="certifications">
+                </div>
+
+                <div id="inputDiv">
+                    <label for="biography">Biography</label><br>
+                    <textarea name="biography">{{trainer.biography}}</textarea>
+                </div>
+                <input type="hidden" name="trainerId" value={{trainer._id}}>
+                <div class="centered">
+                    <div class="row">
+                        <div class="col-sm-6"><input type="submit" value="Update"></div>
+                        <div class="col-sm-6"> <input type="button" onclick="window.location.href='/trainer/view/{{trainer._id}}'"
+                                id="cancel" value="Cancel"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

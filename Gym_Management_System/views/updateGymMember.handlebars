@@ -1,0 +1,68 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="jumbotron" id="head-doc">
+         <header>
+            <h1>Edit Membership</h1>
+         </header>
+         {{#if error}}
+         <p class = "alertMsg">*{{error}}</p>
+         {{/if}}
+          {{#if alertMsg}}
+         <p class = "alertMsg">*{{alertMsg}}</p>
+         {{/if}}
+         <form id="updateGymMember-form" action="/gymMember/update" method="POST">
+            <div id="inputDiv">
+               <label for="membername"> Member Name</label><br>
+               <input class="major" type="text" name="membername" value = {{member.membername}}>
+            </div>
+              <div id="inputDiv">
+               <label for="memberaddress"> Address</label><br>
+               <input class="major" type="text" name="memberaddress" value = {{member.memberaddress}}>
+            </div>
+           <div id="inputDiv">
+               <label for="memberemail"> Email</label><br>
+               <input class="major" type="text" name="memberemail" value = {{member.memberemail}}>
+            </div>
+             <div id="inputDiv">
+               <label for="membermobileno"> Mobile No</label><br>
+               <input class="major" type="text" name="membermobileno" value = {{member.membermobileno}}>
+            </div>
+             <div id="inputDiv">
+               <label for="memberdob"> Date Of Birth</label><br>
+               <input class="major" type="text" name="memberdob" value = {{member.memberdob}}>
+            </div>
+             <div id="inputDiv">
+               <label for="membergender"> Gender</label><br>
+                <select id="membergender" name="membergender">
+                    <option value="" <option value="" selected disabled hidden></option>></option>
+                    <option value ={{member.membergender}} selected>{{member.membergender}}</option>
+                   <option name="membergender" value=Male>Male</option>
+                   <option name="membergender" value=Female>Female</option>
+                   <option name="membergender" value=NA>NA</option>
+                </select>
+            </div>
+             <div id="inputDiv">
+               <label for="memberusername"> Username</label><br>
+               <input class="major" type="text" name="memberusername" value = {{member.memberusername}}>
+            </div>
+            <div id="inputDiv">
+               <label for="memberheight"> Height(metres)</label><br>
+               <input class="major" type="text" name="memberheight" value = {{member.memberheight}}>
+            </div>
+            <div id="inputDiv">
+               <label for="memberweight"> Weight(kg)</label><br>
+               <input class="major" type="text" name="memberweight" value = {{member.memberweight}}>
+            </div>
+            <div id="inputDiv">
+             <input type="hidden" name="memberId" value={{member._id}}>
+            <div class="centered">
+               <div class="row">
+                  <div class="col-sm-6"><input type="submit"  value="Update"></div>
+                  <div class="col-sm-6"> <input type="button"onclick="window.location.href='/gymMember/view/{{member._id}}'"
+                                id="cancel" value="Cancel"></div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

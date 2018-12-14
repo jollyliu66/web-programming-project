@@ -1,0 +1,30 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="jumbotron" id="head-doc">
+            <header>
+                <h1>Trainer</h1>
+            </header>
+            <main>
+                <p>{{message}}</p>
+                <div class="row">
+                    {{#if trainer}}
+                    {{#each trainer}}
+                    <div class="col-sm-3" id="activity">
+                        <a href="/trainer/view/{{this._id}}">
+                            <hr>
+                            <img src="../public/images/abs.jpg">
+                            <trainername>{{this.trainername}}</trainername>
+                        </a>
+                    </div>
+                    {{/each}}
+                    {{/if }}
+                    {{#if permission}}
+                    <div class="col-sm-3" id="add">
+                        <a href="trainer/add"><img src="../public/images/add.png"></a>
+                    </div>
+                    {{/if}}
+                </div>
+            </main>
+        </div>
+    </div>
+</div>

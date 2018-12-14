@@ -1,0 +1,24 @@
+<div class="content">
+    <div class="container-fluid">
+
+        <header>
+            <h1>Workout Activity</h1>
+
+        </header>
+
+        <body>
+            <form id="workout-activity" action = "/WorkoutActivity/view/" method="GET">
+            <p>{{message}}</p>
+                  <label for="username">username</label><br>
+                        <select id="username" name="username">
+                            <option value="" <option value="" selected disabled hidden></option></option>
+                             {{#each username}}
+                            <option name ="userId" value={{this._id}}>{{{this.username}}}</option>
+                            {{/each}}
+                        </select>       
+                <button type="submit" >viewWorkout</button>
+                 
+            </form>
+            </body>
+            </div>
+            </div>

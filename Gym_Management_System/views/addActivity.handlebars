@@ -1,0 +1,48 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="jumbotron" id="head-doc">
+         <header>
+            <h1>New Activity</h1>
+         </header>
+         <form id="createActivity-form" action="/activity/add" method="POST">
+            {{#if alertMsg}}
+            <p class="alertMsg">{{alertMsg}}</p>
+            {{/if }}
+            <div id="inputDiv">
+               <label for="activityname"> Activity Name</label><br>
+               <input class="major" type="text" name="activityname" />
+            </div>
+            <div id="inputDiv">
+               <label for="activitytrainer">Activity Trainer</label><br>
+               <select id="activitytrainer" name="activitytrainer">
+                   <option value="" <option value="" selected disabled hidden></option>></option>
+                  {{#each trainerList}}
+                     <option value={{this.trainername}}>{{this.trainername}}</option>
+                  {{/each}}
+               </select>
+            </div>
+            <div id="inputDiv">
+               <label for="membershipplan">Membership Plan</label><br>
+               <select id="membershipplan" name="membershipplan">
+                  <option value="" <option value="" selected disabled hidden></option>></option>
+                  <option name="membershipplan" value="Gold">Gold</option>
+                  <option name="membershipplan" value="Platinum">Platinum</option>
+                  <option name="membershipplan" value="Diamond">Diamond</option>
+                  <option name="membershipplan" value="Silver">Silver</option>
+               </select>
+            </div>
+            <div id="inputDiv">
+               <label for="activityDescription">Description</label><br>
+               <textarea name="activityDescription" placeholder="Enter Your Desciption Here.."></textarea>
+            </div>
+
+            <div class="centered">
+               <div class="row">
+                  <div class="col-sm-6"><input type="submit" value="Create Activity"></div>
+                  <div class="col-sm-6"> <input type="button" onclick="window.location.href='/activity'" id="cancel" value="Cancel"></div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

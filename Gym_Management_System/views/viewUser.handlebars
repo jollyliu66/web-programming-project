@@ -1,0 +1,35 @@
+<div class="content">
+   <div class="container-fluid">
+      <div class="jumbotron" id="head-doc">
+         <header>
+            <h1>{{user.username}} User</h1>
+               <p id="editOption"><a  href="/user/update/{{user._id}}"><img src="../../public/images/Editing-edit-icon.png"></a> | <a href="/user/delete/{{user._id}}"><img src="../../public/images/delete.png"></a></p>
+         </header>
+         {{#if msg}}
+            <p class="successMsg">{{msg}}</p>
+         {{/if}}
+         <div class="row">
+            <div class="col-sm-9">
+               <div class="view" id="description">
+                  <h4>ABOUT</h4>
+                  <p>I am a trusted user</p>
+               </div>
+            </div>
+            <div class="col-sm-3">
+               <div class="view" id="membershipperiod">
+                  <h4>USER NAME</h4>
+                  <p>{{user.username}}</p>
+               </div>
+               <div class="view" id="signupfees">
+                  <h4>FIRST NAME</h4>
+                  <p>{{user.firstname}}</p>
+               </div>
+               <div class="view" id="services">
+                  <h4>LAST NAME</h4>
+                  <p>{{user.lastname}}</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
